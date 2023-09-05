@@ -1,7 +1,7 @@
 name: shell commands
 on: [ push]
 jobs:
-  run-shell-command: 
+  run-shell-command:     //job name 1
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
@@ -10,16 +10,16 @@ jobs:
         run : |
           node -v
           npm -v
-parallel-jobs-macos:
-  runs-on: macos-latest
-  steps:
-    - name: View SW version
-      run: sw_version
-dependent-job:
-  runs-on: windows-latest
-  needs: run-shell-command //this job is going to run only after job1 
-  steps:
-    - name: echo a string
-      run: Write-Output "Windows String"
-    - name: ErrorStep
-      run: doesnotexist
+  parallel-job-macos:    //job name 2
+    runs-on: macos-latest
+    steps:
+      - name: View SW version
+        run: sw_version
+  dependent-job:
+    runs-on: windows-latest
+    needs: run-shell-command     //this job is going to run only after job1 
+    steps:
+      - name: echo a string
+        run: Write-Output "Windows String"
+      - name: ErrorStep
+        run: doesnotexist
