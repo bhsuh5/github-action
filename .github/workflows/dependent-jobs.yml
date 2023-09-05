@@ -12,9 +12,9 @@ jobs:
           npm -v
 parallel-jobs-macos:
   runs-on: macos-latest
-    steps:
-      - name: View SW version
-        run: sw_version
+  steps:
+    - name: View SW version
+      run: sw_version
 dependent-job:
   runs-on: windows-latest
   needs: run-shell-command //this job is going to run only after job1 
