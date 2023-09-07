@@ -12,4 +12,4 @@ jobs:
      - name : "Display debug message with parameter"
        run :  echo "::debug title:Debug title,file=app.js,line=2,endline=5,col=2,endColumn=7::Missing something"
      - name : "Display notice message with parameter"
-       run :  echo"::notice title:Notice title,file=app.js,line=2,endline=5,col=2,endColumn=7::Missing something"
+       run :  echo "::notice title:Notice title,file=app.js,line=2,endline=5,col=2,endColumn=7::Missing something"
