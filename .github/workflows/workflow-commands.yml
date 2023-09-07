@@ -2,8 +2,14 @@ name : workflow commands
 on: [push]
 
 jobs:
-  testing-wf-commands : 
+  testing-wf-commands: 
     runs-on : ubuntu-latest
     steps :
-      - name : "Display error msg"
-        run : echo "::error::Missing something"
+     - name : "Display error msg"
+       run : echo "::error::Missing something"
+     - name : "Display error message with parameter"
+       run :  echo "::error title:Error title,file=app.js,line=2,endline=5,col=2,endColumn=7::Missing something"
+     - name : "Display debug message with parameter"
+       run :  debug "::debug title:Debug title,file=app.js,line=2,endline=5,col=2,endColumn=7::Missing something"
+     - name : "Display notice message with parameter"
+       run :  debug "::notice title:Notice title,file=app.js,line=2,endline=5,col=2,endColumn=7::Missing something"
