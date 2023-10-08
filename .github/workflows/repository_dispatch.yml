@@ -5,6 +5,6 @@ jobs :
   echo-string:
    runs-on : ubuntu-latest
    steps :
-     - run : echo  "repository dispatch
+     - run : echo  "repository dispatch"
     # this needs permission for both the metadata:read and contents:read&write 
     #this has to live on default branch and this is workflow triggered due to external event
